@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import MainLayout from './MainLayout';
-import AdminBlogs from './pages/orders/AdminBlogs';
+import AdminBlogs from './pages/admin/AdminBlogs';
 import Login from './pages/auth/LoginReg';
 import ProtectedRoute from './components/ProtectedRoute';
 import BlogPage from './pages/blog/BlogPage';
