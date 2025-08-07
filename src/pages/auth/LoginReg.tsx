@@ -23,7 +23,8 @@ const LoginRegPage = () => {
     e.preventDefault();
     setLoading(true);
 
-    const BASE_URL = process.env.REACT_APP_BACKEND_URL;
+    const BASE_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5003";
+
     const endpoint = `${BASE_URL}/api/auth/${isLogin ? 'login' : 'register'}`;
 
     const body = isLogin
@@ -53,7 +54,7 @@ const LoginRegPage = () => {
 
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
-      localStorage.setItem('user',JSON.stringify(user));
+      localStorage.setItem('user', JSON.stringify(user));
 
       if (isLogin) {
         toast.success('Login successful!');

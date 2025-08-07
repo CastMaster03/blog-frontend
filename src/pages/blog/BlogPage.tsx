@@ -30,7 +30,7 @@ const BlogPage: React.FC = () => {
   const token = localStorage.getItem('token');
   const userData = localStorage.getItem('user');
   const userId = userData ? JSON.parse(userData)?._id : null;
-  const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'https://interviewblogsapi.divyeshsarvaiya.com';
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5003';
 
   const fetchBlogs = async (): Promise<any[]> => {
     try {

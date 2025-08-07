@@ -29,7 +29,7 @@ const AdminBlogs: React.FC = () => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const token = localStorage.getItem("token");
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://interviewblogsapi.divyeshsarvaiya.com";
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5003";
 
   const fetchBlogs = async () => {
     try {
