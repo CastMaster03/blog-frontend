@@ -29,7 +29,7 @@ const AdminBlogs: React.FC = () => {
   const [editingId, setEditingId] = useState<string | null>(null);
   const token = localStorage.getItem("token");
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://blogdemo.divyeshsarvaiya.com";
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://213.210.37.67:5003";
 
   const fetchBlogs = async () => {
     try {
@@ -75,7 +75,7 @@ const AdminBlogs: React.FC = () => {
 
     const url = editingId ? `${BACKEND_URL}/api/blogs/${editingId}` : `${BACKEND_URL}/api/blogs`;
     const method = editingId ? "PUT" : "POST";
-
+    console.log('url', url);
     try {
       const res = await fetch(url, {
         method,
@@ -94,8 +94,9 @@ const AdminBlogs: React.FC = () => {
       } else {
         toast.error(body.message || "Operation failed");
       }
-    } catch (err) {
-      toast.error("Server error");
+    } catch (err :any) {
+      console.log('err.message', err.message);
+      toast.error("Server error", err);
     }
   };
 
